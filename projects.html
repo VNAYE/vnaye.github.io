@@ -26,8 +26,34 @@
     </nav>
 
     <!-- Main Content -->
-    <div style="height: 70vh;">
-        <!-- Add your projects content here -->
+    <div class="projects-container" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px;">
+        <script>
+            fetch('assests/projects.json')
+                .then(response => response.json())
+                .then(projects => {
+                    const container = document.querySelector('.projects-container');
+                    projects.forEach(project => {
+                        const card = document.createElement('div');
+                        card.style.cssText = `
+                            width: 300px;
+                            border: 1px solid #ccc;
+                            border-radius: 8px;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            overflow: hidden;
+                            background-color: #fff;
+                        `;
+                        card.innerHTML = `
+                            <img src="assests/images/${project.title.replace(/\s+/g, '').toLowerCase()}.jpg" alt="${project.title}" style="width: 100%; height: 200px; object-fit: cover;">
+                            <div style="padding: 15px;">
+                                <h3 style="margin: 0 0 10px;">${project.title}</h3>
+                                <p style="color: #555;">${project.description}</p>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                })
+                .catch(error => console.error('Error loading projects:', error));
+        </script>
     </div>
 
     <script src="assests/js/script.js"></script>

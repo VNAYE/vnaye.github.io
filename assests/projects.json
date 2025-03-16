@@ -1,0 +1,54 @@
+[
+  {
+    "title": "Project Alpha",
+    "description": "This is the first project focusing on AI development."
+  },
+  {
+    "title": "Project Beta",
+    "description": "This project is about building scalable web applications."
+  },
+  {
+    "title": "Project Gamma",
+    "description": "A research project on blockchain technology."
+  },
+  {
+    "title": "Project Delta",
+    "description": "An IoT project for smart home automation."
+  },
+  {
+    "title": "Project Epsilon",
+    "description": "A mobile app for personal finance management."
+  },
+  {
+    "title": "Project Zeta",
+    "description": "A cloud-based solution for data analytics."
+  },
+  {
+    "title": "Project Eta",
+    "description": "A machine learning project for image recognition."
+  },
+  {
+    "title": "Project Theta",
+    "description": "A cybersecurity project focusing on threat detection."
+  },
+  {
+    "title": "Project Iota",
+    "description": "A healthcare project for patient data management."
+  },
+  {
+    "title": "Project Kappa",
+    "description": "A gaming project using augmented reality."
+  },
+  {
+    "title": "Project Lambda",
+    "description": "A project for automating supply chain logistics."
+  },
+  {
+    "title": "Project Mu",
+    "description": "A social media platform for niche communities."
+  },
+  {
+    "title": "Project Nu",
+    "description": "A renewable energy project for solar panel optimization."
+  }
+]
