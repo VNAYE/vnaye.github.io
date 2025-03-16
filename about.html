@@ -18,9 +18,19 @@
                 <li><a href="index.html"><i class="bi bi-house-door header-icon"></i>Home</a></li>
                 <li><a href="about.html"><i class="bi bi-person header-icon"></i>About Me</a></li>
                 <li><a href="projects.html"><i class="bi bi-folder header-icon"></i>My Projects</a></li>
-                <li><a href=""><i class="bi bi-github header-icon"></i></a></li>
-                <li><a href=""><i class="bi bi-linkedin header-icon"></i></a></li>
-                <li><a href=""><i class="bi bi-instagram header-icon"></i></a></li>
+                <script>
+                    fetch('assests/socials.json')
+                        .then(response => response.json())
+                        .then(socials => {
+                            const navLinks = document.querySelector('.nav-links');
+                            navLinks.innerHTML += `
+                                <li><a href="${socials.github}" target="_blank"><i class="bi bi-github header-icon"></i></a></li>
+                                <li><a href="${socials.linkedin}" target="_blank"><i class="bi bi-linkedin header-icon"></i></a></li>
+                                <li><a href="${socials.instagram}" target="_blank"><i class="bi bi-instagram header-icon"></i></a></li>
+                            `;
+                        })
+                        .catch(error => console.error('Error loading social links:', error));
+                </script>
             </ul>
         </div>
     </nav>
