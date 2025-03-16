@@ -330,8 +330,8 @@ p {
 }
 
 .footer .nav-links li a:hover {
-    text-decoration: underline; /* Underline on hover */
-    color: #007BFF; /* Add blue color on hover */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep the same color */
 }
 
 .footer .nav-links li a .footer-icon {
