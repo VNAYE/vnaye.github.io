@@ -32,12 +32,90 @@
             <h3>Undergraduate Student at National Institute of Technology, Raipur</h3>
             <p>I'm a ECE student. Who is interested in exploring many fields for fun</p>
             <a href="mailto:vinaypepakayala01@gmail.com" class="contact-button">Contact Me</a>
+            <p>If you want to know more about me, <a href="about.html" class="learn-more-link">click here</a> to visit my About Me page.</p>
         </div>
         <div class="intro-image">
             <!-- Placeholder for image -->
             <img src="assests/images/placeholder.png" alt="Vinay Pepakayala's Profile Picture" />
         </div>
     </div>
+
+    <!-- Add hobbies and interests section -->
+    <div class="hobbies-section" style="padding: 20px; text-align: center;">
+        <h2>Hobbies and Interests</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center;">
+            <script>
+                fetch('assests/hobbies.json')
+                    .then(response => response.json())
+                    .then(hobbies => {
+                        const container = document.querySelector('.hobbies-section > div');
+                        hobbies.forEach(hobby => {
+                            const card = document.createElement('div');
+                            card.style.cssText = `
+                                width: 250px;
+                                border: 1px solid #ccc;
+                                border-radius: 8px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                padding: 15px;
+                                background-color: #fff;
+                                text-align: center;
+                            `;
+                            const icons = {
+                                "Photography": "bi-camera",
+                                "Traveling": "bi-geo-alt",
+                                "Coding": "bi-code-slash",
+                                "Reading": "bi-book",
+                                "Gaming": "bi-controller"
+                            };
+                            card.innerHTML = `
+                                <i class="bi ${icons[hobby.title]}" style="font-size: 2rem; color: #007BFF; margin-bottom: 10px;"></i>
+                                <h3 style="margin: 0 0 10px;">${hobby.title}</h3>
+                                <p style="color: #555;">${hobby.description}</p>
+                            `;
+                            container.appendChild(card);
+                        });
+                    })
+                    .catch(error => console.error('Error loading hobbies:', error));
+            </script>
+        </div>
+    </div>
+
+    <!-- Add top 3 projects section -->
+    <div class="projects-preview" style="padding: 20px; text-align: center;">
+        <h2>Top Projects</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center;">
+            <script>
+                fetch('assests/projects.json')
+                    .then(response => response.json())
+                    .then(projects => {
+                        const topProjects = projects.slice(0, 3); // Get the top 3 projects
+                        const container = document.querySelector('.projects-preview > div');
+                        topProjects.forEach(project => {
+                            const card = document.createElement('div');
+                            card.style.cssText = `
+                                width: 300px;
+                                border: 1px solid #ccc;
+                                border-radius: 8px;
+                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                                overflow: hidden;
+                                background-color: #fff;
+                            `;
+                            card.innerHTML = `
+                                <img src="assests/images/${project.title.replace(/\s+/g, '').toLowerCase()}.jpg" alt="${project.title}" style="width: 100%; height: 200px; object-fit: cover;">
+                                <div style="padding: 15px;">
+                                    <h3 style="margin: 0 0 10px;">${project.title}</h3>
+                                    <p style="color: #555;">${project.description}</p>
+                                    <a href="${project.link}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #007BFF; color: #fff; text-decoration: none; border-radius: 5px;">View Project</a>
+                                </div>
+                            `;
+                            container.appendChild(card);
+                        });
+                    })
+                    .catch(error => console.error('Error loading projects:', error));
+            </script>
+        </div>
+    </div>
+
     <!-- Add extra content to push footer to the next page -->
     <div style="height: 50vh;"></div>
     <script src="assests/js/script.js"></script>

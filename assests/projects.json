@@ -1,54 +1,73 @@
 [
   {
     "title": "Project Alpha",
-    "description": "This is the first project focusing on AI development."
+    "description": "This is the first project focusing on AI development.",
+    "link": "https://example.com/project-alpha",
+    "blog": "https://example.com/project-alpha-blog",
+    "github": "https://github.com/vinaypepakayala/project-alpha",
+    "deployment": "https://alpha.example.com"
   },
   {
     "title": "Project Beta",
-    "description": "This project is about building scalable web applications."
+    "description": "This project is about building scalable web applications.",
+    "link": "https://example.com/project-beta",
+    "github": "https://github.com/vinaypepakayala/project-beta"
   },
   {
     "title": "Project Gamma",
-    "description": "A research project on blockchain technology."
+    "description": "A research project on blockchain technology.",
+    "link": "https://example.com/project-gamma",
+    "deployment": "https://gamma.example.com"
   },
   {
     "title": "Project Delta",
-    "description": "An IoT project for smart home automation."
+    "description": "An IoT project for smart home automation.",
+    "link": "https://example.com/project-delta"
   },
   {
     "title": "Project Epsilon",
-    "description": "A mobile app for personal finance management."
+    "description": "A mobile app for personal finance management.",
+    "link": "https://example.com/project-epsilon",
+    "blog": "https://example.com/project-epsilon-blog"
   },
   {
     "title": "Project Zeta",
-    "description": "A cloud-based solution for data analytics."
+    "description": "A cloud-based solution for data analytics.",
+    "link": "https://example.com/project-zeta"
   },
   {
     "title": "Project Eta",
-    "description": "A machine learning project for image recognition."
+    "description": "A machine learning project for image recognition.",
+    "link": "https://example.com/project-eta"
   },
   {
     "title": "Project Theta",
-    "description": "A cybersecurity project focusing on threat detection."
+    "description": "A cybersecurity project focusing on threat detection.",
+    "link": "https://example.com/project-theta"
   },
   {
     "title": "Project Iota",
-    "description": "A healthcare project for patient data management."
+    "description": "A healthcare project for patient data management.",
+    "link": "https://example.com/project-iota"
   },
   {
     "title": "Project Kappa",
-    "description": "A gaming project using augmented reality."
+    "description": "A gaming project using augmented reality.",
+    "link": "https://example.com/project-kappa"
   },
   {
     "title": "Project Lambda",
-    "description": "A project for automating supply chain logistics."
+    "description": "A project for automating supply chain logistics.",
+    "link": "https://example.com/project-lambda"
   },
   {
     "title": "Project Mu",
-    "description": "A social media platform for niche communities."
+    "description": "A social media platform for niche communities.",
+    "link": "https://example.com/project-mu"
   },
   {
     "title": "Project Nu",
-    "description": "A renewable energy project for solar panel optimization."
+    "description": "A renewable energy project for solar panel optimization.",
+    "link": "https://example.com/project-nu"
   }
 ]
