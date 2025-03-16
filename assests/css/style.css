@@ -1,0 +1,213 @@
+body {
+    font-family: 'Georgia', serif; /* Classic serif font */
+    background-color: #f4f4f4; /* Light gray background */
+    color: #333; /* Dark gray text */
+    text-align: left; /* Left-aligned text */
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2 {
+    color: #000; /* Black text for headings */
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+nav {
+    position: relative; /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 98%;
+    margin: 0 auto;
+    background-color: #ffffff; /* White background */
+    border-bottom: 1px solid #ccc; /* Subtle border */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand a {
+    color: #000; /* Black text */
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links li a {
+    color: #333; /* Dark gray text */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.nav-links li a:hover {
+    color: #000; /* Black text on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+.nav-links li a .header-icon {
+    font-size: 1.2rem; /* Adjust icon size */
+    color: #333; /* Dark gray color for icons */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a .header-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: #000; /* Change color on hover */
+}
+
+p {
+    color: #555; /* Medium gray text */
+    line-height: 1.6; /* Improved readability */
+}
+
+.intro-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px auto; /* Centered horizontally */
+    padding: 0; /* Remove padding */
+    max-width: 1000px; /* Adjust width */
+    border: none; /* Remove border */
+    border-radius: 0; /* Remove border radius */
+    background-color: transparent; /* Transparent background */
+    box-shadow: none; /* Remove shadow */
+}
+
+.intro-image {
+    width: 200px; /* Slightly larger image */
+    height: 200px;
+    border: none; /* Remove border */
+    border-radius: 50%;
+    background-color: #e0e0e0; /* Placeholder background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem; /* Adjust font size */
+    color: #555;
+}
+
+.intro-text {
+    max-width: 60%; /* Adjust width for text */
+    margin-right: 20px;
+}
+
+.intro-text h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #666; /* Slightly lighter gray */
+}
+
+.intro-text p {
+    font-size: 1rem;
+    color: #333; /* Dark gray */
+}
+
+.contact-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007BFF; /* Blue background */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+.footer {
+    position:relative; /* Change to relative to place it after content */
+    bottom: 0;
+    width: 100%;
+    justify-content: center;
+    display: block;
+    background-color: #333; /* Dark gray background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 50px; /* Add spacing from the content above */
+    font-size: 0.9rem; /* Adjust font size for better readability */
+    letter-spacing: 0.5px; /* Add slight spacing between letters */
+}
+
+.footer .nav-links {
+    list-style: none;
+    padding: 5px ;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+
+.footer .nav-links li {
+    margin: 0;
+}
+
+.footer .nav-links li a {
+    color: #fff; /* White text */
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.footer .nav-links li a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #007BFF; /* Add blue color on hover */
+}
+
+.footer.hidden {
+    transform: translateY(100%);
+}
+
+.footer .nav-links li a .footer-icon {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #fff; /* White color for icons */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .nav-links li a .footer-icon:hover {
+    transform: scale(1.2); /* Slight zoom on hover */
+    color: #007BFF; /* Change color on hover */
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
