@@ -2,10 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=0.6, user-scalable=no">
     <title>About - Vinay Pepakayala</title>
     <link rel="stylesheet" href="assests/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            text-align: justify; /* Justify all content */
+        }
+        div {
+            max-width: 100%; /* Ensure the content spans the full width */
+            padding: 0 20px; /* Add some padding for better alignment */
+        }
+        .about-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .about-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        .about-content {
+            max-width: 800px;
+            text-align: justify; /* Ensure about content is justified */
+            line-height: 1.6;
+        }
+        .section-title {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .education, .experience {
+            margin-bottom: 20px;
+        }
+        .footer {
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .about-container {
+                padding: 10px; /* Reduce padding for smaller screens */
+            }
+            .about-photo {
+                width: 100px; /* Smaller photo size */
+                height: 100px;
+                margin-bottom: 15px;
+            }
+            .about-content {
+                max-width: 100%; /* Allow full width */
+                text-align: center; /* Center-align text */
+                padding: 0 10px; /* Add padding for better spacing */
+            }
+            .section-title {
+                font-size: 1.2em; /* Reduce font size */
+                margin-top: 15px;
+                margin-bottom: 8px;
+            }
+            .education-item, .experience-item, .certification-item {
+                padding: 8px; /* Reduce padding */
+                margin-bottom: 15px; /* Reduce margin */
+            }
+            .education-item h3, .experience-item h3, .certification-item h3 {
+                font-size: 1rem; /* Adjust heading size */
+            }
+            .education-item p, .experience-item p, .certification-item p {
+                font-size: 0.9rem; /* Adjust paragraph size */
+            }
+            .certification-button {
+                font-size: 0.8rem; /* Adjust button font size */
+                padding: 6px 10px; /* Adjust button padding */
+            }
+        }
+        .photo-modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .photo-modal img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            position: relative;
+        }
+        .photo-modal .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px; /* Close button near the image */
+            font-size: 1.5rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .photo-modal .close-button:hover {
+            color: #ff0000; /* Red color on hover */
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -14,8 +122,8 @@
             <ul class="brand">
                 <a href="index.html">Vinay Pepakayala</a>
             </ul>
+            <button class="menu-toggle">&#9776;</button> <!-- Menu toggle button -->
             <ul class="nav-links">
-                <li><a href="index.html"><i class="bi bi-house-door header-icon"></i>Home</a></li>
                 <li><a href="about.html"><i class="bi bi-person header-icon"></i>About Me</a></li>
                 <li><a href="projects.html"><i class="bi bi-folder header-icon"></i>My Projects</a></li>
                 <script>
@@ -36,9 +144,182 @@
     </nav>
 
     <!-- Main Content -->
-    <div style="height: 70vh;">
-        <!-- Add your about content here -->
+    <div class="about-container">
+        <img src="assests/images/vinaypepakayala.jpeg" alt="Vinay Pepakayala" class="about-photo" onclick="openImageModal()">
+        <div class="about-content">
+            <h1>Hello, Namaste! I'm <strong>Vinay Pepakayala</strong></h1>
+            <p>
+                I'm an enthusiastic undergraduate student at the <strong>National Institute of Technology (NIT) Raipur</strong>, driven by a deep passion for 
+                <strong>software development, machine learning, and artificial intelligence</strong>. I thrive on exploring emerging technologies, developing innovative applications, 
+                and expanding my knowledge through hands-on experimentation and real-world implementations.
+            </p>
+            <p>
+                My expertise lies in <strong>AI and machine learning</strong>, with a strong focus on <strong>deep learning, prompt engineering, model fine-tuning, and the implementation 
+                of cutting-edge models</strong> like <strong>transformers, tokenizers, and stable diffusion</strong>. My goal is to gain a profound understanding of these technologies 
+                and harness their power to solve practical problems, optimize processes, and contribute to the advancement of AI-driven solutions.
+            </p>
+            <p>
+                Beyond my technical pursuits, I am always eager to <strong>collaborate, share knowledge, and engage in meaningful discussions</strong> about AI, software development, 
+                and emerging technologies. My curiosity and problem-solving mindset drive me to take on challenging projects that push the boundaries of innovation.
+            </p>
+
+            <h2 class="section-title">Education</h2>
+            <div class="education">
+                <div class="education-item">
+                    <h3>🎓 National Institute of Technology (NIT), Raipur</h3>
+                    <p>📍 Raipur, Chhattisgarh | 🗓️ 2022 – Present | 📊 CGPA: 8.24/10</p>
+                    <p>
+                        Pursuing a <strong>B.Tech in Electronics and Communication Engineering</strong>, focusing on <strong>AI, software development, and problem-solving</strong> 
+                        to bridge the gap between hardware and intelligent software solutions.
+                    </p>
+                </div>
+                <div class="education-item">
+                    <h3>🏫 Tirumala Junior Kalasala</h3>
+                    <p>📍 Rajahmundry, Andhra Pradesh | 🗓️ 2020 – 2022 | 📊 Score: 93.7%</p>
+                    <p>
+                        Completed <strong>Mathematics, Physics, and Chemistry (MPC)</strong>, building a strong foundation in analytical thinking, logical reasoning, 
+                        and problem-solving skills.
+                    </p>
+                </div>
+                <div class="education-item">
+                    <h3>🏫 Tirumala High School</h3>
+                    <p>📍 Rajahmundry, Andhra Pradesh | 🗓️ 2020 | 📊 CGPA: 10/10</p>
+                    <p>
+                        Early education that sparked my passion for <strong>science, technology, and logical reasoning</strong>, laying the groundwork for my academic journey.
+                    </p>
+                </div>
+            </div>
+            <style>
+                .education-item {
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    border-left: 4px solid #007bff;
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                }
+                .education-item h3 {
+                    margin-bottom: 5px;
+                    color: #007bff;
+                }
+                .education-item p {
+                    margin: 5px 0;
+                }
+            </style>
+
+            <h2 class="section-title">Experience</h2>
+            <div class="experience">
+                <div class="experience-item">
+                    <h3>💼 AI Intern | TechSaksham (Microsoft & SAP CSR Initiative)</h3>
+                    <p>🗓️ <em>Nov 2024 – Dec 2024</em></p>
+                    <ul>
+                        <li>Developed an <strong>Attendance Management System</strong> using <strong>facial recognition, OpenCV, and Streamlit</strong>, ensuring efficient and automated attendance tracking.</li>
+                        <li>Implemented real-time <strong>student registration and attendance monitoring</strong>, improving accuracy and reducing manual effort.</li>
+                    </ul>
+                </div>
+                <div class="experience-item">
+                    <h3>💼 Research Intern | NIT Warangal (Under Prof. Ch. V. Ramarao)</h3>
+                    <p>🗓️ <em>May 2024</em></p>
+                    <ul>
+                        <li>Conducted research on <strong>deep learning models</strong> optimized for <strong>real-time edge computing</strong>, enhancing AI performance on resource-constrained devices.</li>
+                        <li>Designed AI models for <strong>autonomous systems and vehicle steering prediction</strong>, contributing to advancements in self-driving technology and intelligent transportation systems.</li>
+                    </ul>
+                </div>
+            </div>
+            <style>
+                .experience-item {
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    border-left: 4px solid #28a745;
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                }
+                .experience-item h3 {
+                    margin-bottom: 5px;
+                    color: #28a745;
+                }
+                .experience-item p {
+                    margin: 5px 0;
+                }
+                .experience-item ul {
+                    margin: 5px 0;
+                    padding-left: 20px;
+                }
+                .experience-item ul li {
+                    margin-bottom: 5px;
+                }
+            </style>
+
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications">
+                <div class="certification-item">
+                    <h3>📜 Foundation of Ethical Hacking Certification</h3>
+                    <p>🏢 <strong>Udacity & Accenture</strong> | 🗓️ January 2025</p>
+                    <p>
+                        Strengthened expertise in <strong>cybersecurity, penetration testing, and secure coding practices</strong>, enabling the development of robust and secure AI applications.
+                    </p>
+                    <a href="https://www.udacity.com/certificate/e/0aa87b00-b7ba-11ef-b7b2-2b124e013902" target="_blank" class="certification-button">
+                        <i class="bi bi-box-arrow-up-right"></i> View Certificate
+                    </a>
+                </div>
+            </div>
+            <style>
+                .certifications {
+                    margin-bottom: 20px;
+                }
+                .certification-item {
+                    margin-bottom: 20px;
+                    padding: 10px;
+                    border-left: 4px solid #ffc107;
+                    background-color: #f9f9f9;
+                    border-radius: 5px;
+                }
+                .certification-item h3 {
+                    margin-bottom: 5px;
+                    color: #ffc107;
+                }
+                .certification-item p {
+                    margin: 5px 0;
+                }
+                .certification-button {
+                    display: inline-block;
+                    margin-top: 10px;
+                    padding: 8px 15px;
+                    background-color: #ffc107;
+                    color: #000;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    transition: background-color 0.3s ease;
+                }
+                .certification-button i {
+                    margin-right: 5px;
+                }
+                .certification-button:hover {
+                    background-color: #e0a800;
+                }
+            </style>
+
+            <p>
+                I am always open to exciting opportunities, collaborations, and discussions related to AI, software development, and emerging technologies. Let's connect and create something impactful together!
+            </p>
+        </div>
     </div>
+
+    <!-- Modal for enlarged photo -->
+    <div id="image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <span onclick="closeImageModal()" style="position: fixed; top: 20px; right: 20px; font-size: 2rem; color: white; cursor: pointer;">&times;</span>
+        <img src="assests/images/vinaypepakayala.jpeg" alt="Vinay Pepakayala" style="max-width: 90%; max-height: 90%; border-radius: 8px;">
+    </div>
+
+    <script>
+        function openImageModal() {
+            document.getElementById('image-modal').style.display = 'flex';
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').style.display = 'none';
+        }
+    </script>
 
     <script src="assests/js/script.js"></script>
     <footer class="footer">
@@ -46,19 +327,9 @@
             <li>&copy; 2023 Vinay Pepakayala. All rights reserved.</li>
         </ul>
         <ul class="nav-links">
-            <script>
-                fetch('assests/socials.json')
-                    .then(response => response.json())
-                    .then(socials => {
-                        const footerLinks = document.querySelector('.footer .nav-links:last-child');
-                        footerLinks.innerHTML = `
-                            <li><a href="${socials.github}" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
-                            <li><a href="${socials.linkedin}" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
-                            <li><a href="${socials.instagram}" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
-                        `;
-                    })
-                    .catch(error => console.error('Error loading social links:', error));
-            </script>
+            <li><a href="https://github.com/vinay-852" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
+            <li><a href="https://linkedin.com/in/vinaypepakayala" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
+            <li><a href="https://instagram.com/vinay_pepakayala" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
         </ul>
     </footer>
 </body>

@@ -5,6 +5,8 @@ body {
     text-align: left; /* Left-aligned text */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 h1, h2 {
@@ -23,10 +25,10 @@ h2 {
 }
 
 nav {
-    position: relative; /* Fixed position */
+    position: relative;
     top: 0;
     left: 0;
-    width: 98%;
+    width: 100%; /* Full width for header */
     margin: 0 auto;
     background-color: #ffffff; /* White background */
     border-bottom: 1px solid #ccc; /* Subtle border */
@@ -36,8 +38,10 @@ nav {
 
 .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Ensure space between brand and menu */
     align-items: center;
+    position: relative;
+    padding: 0; /* Remove left padding */
 }
 
 .brand a {
@@ -47,31 +51,44 @@ nav {
     font-weight: bold;
 }
 
+.brand {
+    justify-content: flex-start;
+    flex: 1; /* Allow the brand to take up available space */
+    text-align: left; /* Align brand to the left */
+    margin: 0; /* Remove left margin */
+}
+
 .nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    justify-content: center; /* Center links on smaller screens */
 }
 
 .nav-links li {
-    margin: 0 15px;
+    margin: 5px 10px; /* Adjust spacing for better appearance on mobile */
 }
 
 .nav-links li a {
     color: #333; /* Dark gray text */
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Slightly smaller font for mobile */
     font-weight: normal;
+    padding: 8px 12px; /* Adjust padding for better touch targets */
 }
 
 .nav-links li a:hover {
     color: #000; /* Black text on hover */
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: none; /* Remove underline */
+    background-color: #f0f0f0; /* Light gray background on hover */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Add padding for better appearance */
 }
 
 .nav-links li a .header-icon {
-    font-size: 1.2rem; /* Adjust icon size */
+    font-size: 1rem; /* Adjust icon size for mobile */
     color: #333; /* Dark gray color for icons */
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -79,6 +96,128 @@ nav {
 .nav-links li a .header-icon:hover {
     transform: scale(1.2); /* Slight zoom on hover */
     color: #000; /* Change color on hover */
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default */
+    font-size: 1.8rem; /* Slightly larger for better visibility */
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #333;
+    position: absolute;
+    top: 15px; /* Adjusted for better alignment */
+    right: 20px;
+    text-align: right;
+    margin-right: 10px;
+    transition: transform 0.3s ease, color 0.3s ease; /* Add smooth animation */
+    flex: 0; /* Prevent the menu toggle from taking extra space */
+    position: relative;
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+.menu-toggle:hover {
+    color: #007BFF; /* Change color on hover */
+    transform: scale(1.2); /* Slight zoom effect */
+}
+
+.menu-toggle:focus {
+    outline: none;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content:left; /* Ensure space between brand and menu */
+        align-items: start;
+    }
+    .menu-toggle {
+        display: inline; /* Show toggle button on smaller screens */
+        position: absolute;
+        right: 20px; /* Align toggle to the extreme right */
+        top: 15px; /* Adjust for better alignment */
+    }
+    .brand {
+        justify-content: flex-start;
+        flex: 0;
+        margin-left: 20px; /* Align brand to the extreme left */
+    }
+    nav .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        background-color: #fff;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        width: 80%; /* Sidebar width adjusted to fit content */
+        max-width: 300px; /* Limit maximum width */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        padding: 10px; /* Add padding for better spacing */
+        border-left: 1px solid #ccc; /* Subtle border for sidebar */
+    }
+
+    nav .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    nav .nav-links li {
+        margin: 10px 0; /* Add spacing between links */
+    }
+
+    nav .nav-links li a {
+        padding: 10px 15px; /* Adjust padding for better touch targets */
+        text-align: left; /* Align text to the left */
+        font-size: 1rem; /* Slightly larger font for better readability */
+    }
+
+    .intro-image img {
+        width: 120px; /* Smaller width for mobile */
+        height: 120px; /* Smaller height for mobile */
+    }
+
+    .footer {
+        display: flex; /* Ensure footer is visible */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+        justify-content: center; /* Center align content */
+        width: 100%; /* Set footer width to 100% */
+        position: relative; /* Ensure position is relative */
+        padding: 15px; /* Add padding for better spacing */
+    }
+
+    .footer .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Add spacing between links */
+        width: 100%; /* Spread links across the full width */
+        text-align: center; /* Center align text */
+    }
+
+    .footer .nav-links {
+        display: flex; /* Ensure footer links remain visible */
+        flex-direction: row; /* Keep footer links in a row */
+        justify-content: center; /* Center align footer links */
+        gap: 50px; /* Maintain gap between footer links */
+    }
+
+    .nav-links li a span {
+        display: inline; /* Ensure names are visible */
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+        margin-left: 5px; /* Add spacing between icon and name */
+    }
+
+    .intro-container {
+        flex-direction: column; /* Stack image and text vertically */
+        align-items: center; /* Center align content */
+    }
+
+    .intro-image {
+        margin-bottom: 20px; /* Add spacing below the image */
+    }
+
+    .intro-text {
+        max-width: 100%; /* Allow text to take full width */
+        text-align: center; /* Center align text */
+    }
 }
 
 p {
@@ -140,25 +279,26 @@ p {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background-color: #007BFF; /* Blue background */
+    background-color: #7b00ff; /* Blue background */
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .contact-button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background-color: #9ca3aa; /* Darker blue on hover */
+    color: #000;
     transform: scale(1.05); /* Slight zoom effect */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
 }
 
 .footer {
-    position:relative; /* Change to relative to place it after content */
+    position: relative; /* Place footer after content */
     bottom: 0;
-    width: 100%;
+    width: 110%; /* Ensure footer stretches across the full page */
     justify-content: center;
     display: block;
-    background-color: #333; /* Dark gray background */
+    background-color: #333 !important; /* Ensure consistent dark gray background */
     color: #fff; /* White text */
     text-align: center;
     padding: 15px 0;
@@ -170,12 +310,13 @@ p {
 
 .footer .nav-links {
     list-style: none;
-    padding: 5px ;
-    margin: 0;
+    padding: 5px;
+    margin: 0 auto; /* Center the content inside the footer */
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:50px;
+    gap: 50px;
+    max-width: 1200px; /* Limit the content width for better alignment */
 }
 
 .footer .nav-links li {
@@ -191,10 +332,6 @@ p {
 .footer .nav-links li a:hover {
     text-decoration: underline; /* Underline on hover */
     color: #007BFF; /* Add blue color on hover */
-}
-
-.footer.hidden {
-    transform: translateY(100%);
 }
 
 .footer .nav-links li a .footer-icon {

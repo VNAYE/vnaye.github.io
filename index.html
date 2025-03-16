@@ -2,19 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.6, maximum-scale=0.6, user-scalable=no">
     <title>Vinay Pepakayala</title>
     <link rel="stylesheet" href="assests/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        .intro-container {
+            max-width: 100%; /* Ensure the container spans the full width */
+            padding: 0 20px; /* Add some padding for better alignment */
+            display: flex; /* Display content side by side */
+            flex-direction: row; /* Align items in a row */
+            align-items: center; /* Vertically center align content */
+            justify-content: center; /* Center align content horizontally */
+            text-align: left; /* Align text to the left */
+            gap: 150px; /* Add spacing between the image and text */
+        }
+        .intro-image {
+            margin-top: 10px; /* Add some margin above the image */
+            margin: 0; /* Remove any margin around the image */
+        }
         .intro-image img {
-            width: 200px; /* Set desired width */
-            height: 200px; /* Set desired height */
+            margin-top: 10px;
+            width: 200px; /* Default width */
+            height: 200px; /* Default height */
             object-fit: cover; /* Ensure the image maintains aspect ratio */
+            border-radius: 1%; /* Make the image circular */
             transition: transform 0.3s ease-in-out;
         }
         .intro-image img:hover {
             transform: scale(1.1);
+        }
+        .intro-text {
+            margin-top: 0; /* Remove any margin between the image and text */
+        }
+        @media (min-width: 1024px) {
+            .intro-image img {
+                width: 350px; /* Larger width for larger screens */
+                height: 350px; /* Larger height for larger screens */
+            }
+        }
+        @media (max-width: 768px) {
+            .intro-container {
+                flex-direction: column; /* Stack image and text vertically on smaller screens */
+                text-align: center; /* Center align text for smaller screens */
+                gap: 20px;
+            }
         }
     </style>
 </head>
@@ -23,12 +62,12 @@
     <nav>
         <div class="nav-container">
             <ul class="brand">
-                <a href="index.html">Vinay Pepakayala</a>
+                <a href="index.html">Vinay Pepakayala.</a>
             </ul>
+            <button class="menu-toggle">&#9776;</button> <!-- Menu toggle button -->
             <ul class="nav-links">
-                <li><a href=""><i class="bi bi-house-door header-icon"></i>Home</a></li>
-                <li><a href="about.html"><i class="bi bi-person header-icon"></i>About Me</a></li>
-                <li><a href="projects.html"><i class="bi bi-folder header-icon"></i>My Projects</a></li>
+                <li><a href="about.html"><i class="bi bi-person header-icon"></i> About Me</a></li>
+                <li><a href="projects.html"><i class="bi bi-folder header-icon"></i> My Projects</a></li>
                 <script>
                     fetch('assests/socials.json')
                         .then(response => response.json())
@@ -47,16 +86,15 @@
     </nav>
 
     <div class="intro-container">
-        <div style="height:30vh"></div>
+        <div class="intro-image">
+            <img src="assests/images/vinaypepakayala.jpeg" alt="Vinay Pepakayala's Profile Picture" onclick="openImageModal()" />
+        </div>
         <div class="intro-text">
             <h1>Hi, I'm Vinay Pepakayala</h1>
             <h3>Undergraduate Student at National Institute of Technology, Raipur</h3>
-            <p>I'm a ECE student. Who is interested in exploring many fields for fun</p>
+            <p>I'm an ECE student with a passion for exploring diverse fields, from technology to creativity. I enjoy solving problems, building projects, and learning new skills to expand my horizons.</p>
             <a href="mailto:vinaypepakayala01@gmail.com" class="contact-button">Contact Me</a>
             <p>If you want to know more about me, <a href="about.html" class="learn-more-link">click here</a> to visit my About Me page.</p>
-        </div>
-        <div class="intro-image">
-            <img src="assests/images/vinaypepakayala.jpeg" alt="Vinay Pepakayala's Profile Picture" onclick="openImageModal()" />
         </div>
     </div>
 
@@ -79,6 +117,7 @@
     <!-- Add hobbies and interests section -->
     <div class="hobbies-section" style="padding: 20px; text-align: center;">
         <h2>Hobbies and Interests</h2>
+        <h4 style="color: #777; margin-bottom: 20px;">What I love to do in my free time</h4>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center;">
             <script>
                 fetch('assests/hobbies.json')
@@ -118,7 +157,8 @@
 
     <!-- Add top 3 projects section -->
     <div class="projects-preview" style="padding: 20px; text-align: center;">
-        <h2>Top Projects</h2>
+        <h2>Recent Projects</h2>
+        <h4 style="color: #777; margin-bottom: 20px;">Some of my latest work</h4>
         <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: center;">
             <script>
                 fetch('assests/projects.json')
@@ -152,27 +192,24 @@
         </div>
     </div>
 
-    <!-- Add extra content to push footer to the next page -->
-    <div style="height: 50vh;"></div>
+    <!-- Add Future Goals section -->
+    <div class="future-goals" style="padding: 20px; text-align: center;">
+        <h2>Future Goals</h2>
+        <h4 style="color: #777; margin-bottom: 20px;">Where I see myself in the future</h4>
+        <p style="max-width: 800px; margin: 0 auto; color: #555;">
+            My future aspirations include delving deeper into the fields of Artificial Intelligence and Machine Learning, contributing to impactful projects, and making a positive difference in the tech world. I aim to continuously grow as a professional and as a person, embracing challenges and opportunities along the way.
+        </p>
+    </div>
+
     <script src="assests/js/script.js"></script>
     <footer class="footer">
         <ul class="nav-links"> 
             <li>&copy; 2023 Vinay Pepakayala. All rights reserved.</li>
         </ul>
         <ul class="nav-links">
-            <script>
-                fetch('assests/socials.json')
-                    .then(response => response.json())
-                    .then(socials => {
-                        const footerLinks = document.querySelector('.footer .nav-links:last-child');
-                        footerLinks.innerHTML = `
-                            <li><a href="${socials.github}" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
-                            <li><a href="${socials.linkedin}" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
-                            <li><a href="${socials.instagram}" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
-                        `;
-                    })
-                    .catch(error => console.error('Error loading social links:', error));
-            </script>
+            <li><a href="https://github.com/vinay-852" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
+            <li><a href="https://linkedin.com/in/vinaypepakayala" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
+            <li><a href="https://instagram.com/vinay_pepakayala" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
         </ul>
     </footer>
 </body>
