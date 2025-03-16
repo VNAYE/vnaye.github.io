@@ -1,22 +1,22 @@
 [
   {
-    "title": "Photography",
-    "description": "Capturing moments and exploring the art of visual storytelling."
+    "title": "Travel & Exploration",
+    "description": "Immersing in new environments, experiencing diverse cultures, and discovering hidden gems in different places."
   },
   {
-    "title": "Traveling",
-    "description": "Exploring new places and experiencing different cultures."
+    "title": "Software Development & Problem-Solving",
+    "description": "Coding as a creative outlet, developing projects that solve real-world challenges."
   },
   {
-    "title": "Coding",
-    "description": "Building projects and solving problems through programming."
+    "title": "Reading & Learning",
+    "description": "Diving into technical books on AI and emerging tech, as well as exploring fiction to fuel curiosity."
   },
   {
-    "title": "Reading",
-    "description": "Diving into books on technology, history, and fiction."
+    "title": "Tech & Innovation Enthusiast",
+    "description": "Exploring new advancements in AI, ML, and deep learning, staying up-to-date with the latest trends."
   },
   {
-    "title": "Gaming",
-    "description": "Enjoying strategy and adventure games during leisure time."
+    "title": "Gaming & Strategy",
+    "description": "Playing strategy and adventure games to sharpen analytical and decision-making skills."
   }
 ]
