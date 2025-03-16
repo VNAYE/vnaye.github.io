@@ -56,10 +56,25 @@
             <p>If you want to know more about me, <a href="about.html" class="learn-more-link">click here</a> to visit my About Me page.</p>
         </div>
         <div class="intro-image">
-            <!-- Placeholder for image -->
-            <img src="assests/images/vinaypepakayala.jpeg" alt="Vinay Pepakayala's Profile Picture" />
+            <img src="assests/images/vinaypepakayala.jpeg" alt="Vinay Pepakayala's Profile Picture" onclick="openImageModal()" />
         </div>
     </div>
+
+    <!-- Full-page image modal -->
+    <div id="image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center;">
+        <span onclick="closeImageModal()" style="position: absolute; top: 20px; right: 20px; font-size: 2rem; color: white; cursor: pointer;">&times;</span>
+        <img src="assests/images/vinaypepakayala.jpeg" alt="Vinay Pepakayala's Profile Picture" style="max-width: 90%; max-height: 90%; border-radius: 8px;">
+    </div>
+
+    <script>
+        function openImageModal() {
+            document.getElementById('image-modal').style.display = 'flex';
+        }
+
+        function closeImageModal() {
+            document.getElementById('image-modal').style.display = 'none';
+        }
+    </script>
 
     <!-- Add hobbies and interests section -->
     <div class="hobbies-section" style="padding: 20px; text-align: center;">
@@ -145,6 +160,19 @@
             <li>&copy; 2023 Vinay Pepakayala. All rights reserved.</li>
         </ul>
         <ul class="nav-links">
+            <script>
+                fetch('assests/socials.json')
+                    .then(response => response.json())
+                    .then(socials => {
+                        const footerLinks = document.querySelector('.footer .nav-links:last-child');
+                        footerLinks.innerHTML = `
+                            <li><a href="${socials.github}" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
+                            <li><a href="${socials.linkedin}" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
+                            <li><a href="${socials.instagram}" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
+                        `;
+                    })
+                    .catch(error => console.error('Error loading social links:', error));
+            </script>
         </ul>
     </footer>
 </body>

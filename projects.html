@@ -39,36 +39,44 @@
     <div class="projects-container" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; justify-content: center; align-items: center; min-height: 100vh;">
         <script>
             fetch('assests/projects.json')
-                .then(response => response.json())
-                .then(projects => {
-                    const container = document.querySelector('.projects-container');
-                    projects.forEach(project => {
-                        const card = document.createElement('div');
-                        card.style.cssText = `
-                            width: 300px;
-                            border: 1px solid #ccc;
-                            border-radius: 8px;
-                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                            overflow: hidden;
-                            background-color: #fff;
-                        `;
-                        card.innerHTML = `
-                            <img src="assests/images/${project.title.replace(/\s+/g, '').toLowerCase()}.jpg" alt="${project.title}" style="width: 100%; height: 200px; object-fit: cover;">
-                            <div style="padding: 15px;">
-                                <h3 style="margin: 0 0 10px;">${project.title}</h3>
-                                <p style="color: #555;">${project.description}</p>
-                            </div>
-                            <div style="padding: 15px; text-align: center; background-color: #f4f4f4;">
-                                <a href="${project.link}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #007BFF; color: #fff; text-decoration: none; border-radius: 5px; margin-bottom: 10px;">View Project</a>
-                                ${project.blog ? `<a href="${project.blog}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #28a745; color: #fff; text-decoration: none; border-radius: 5px; margin-bottom: 10px;">Read Blog</a>` : ''}
-                                ${project.github ? `<a href="${project.github}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px; margin-bottom: 10px;">GitHub Repo</a>` : ''}
-                                ${project.deployment ? `<a href="${project.deployment}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #17a2b8; color: #fff; text-decoration: none; border-radius: 5px;">Live Deployment</a>` : ''}
-                            </div>
-                        `;
-                        container.appendChild(card);
-                    });
-                })
-                .catch(error => console.error('Error loading projects:', error));
+    .then(response => response.json())
+    .then(projects => {
+        const container = document.querySelector('.projects-container');
+        projects.forEach(project => {
+            const card = document.createElement('div');
+            card.style.cssText = `
+                width: 300px; /* Ensure all cards have the same width */
+                height: 400px; /* Ensure all cards have the same height */
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            `;
+            card.innerHTML = `
+                <div style="width: 100%; height: 150px; overflow: hidden; display: flex; justify-content: center; align-items: center; padding-top: 10px;">
+                    <img src="assests/images/${project.title.replace(/\s+/g, '').toLowerCase()}.jpg" 
+                         alt="${project.title}" 
+                         style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div style="padding: 15px; text-align: center; height: 150px; overflow: hidden;">
+                    <h3 style="margin: 0 0 10px;">${project.title}</h3>
+                    <p style="color: #555; margin: 0;">${project.description}</p>
+                </div>
+                <div style="padding: 15px; text-align: center; background-color: #f4f4f4; height: 100px; display: flex; flex-direction: column; justify-content: center; gap: 10px;">
+                    ${project.blog ? `<a href="${project.blog}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #28a745; color: #fff; text-decoration: none; border-radius: 5px;">Read Blog</a>` : ''}
+                    ${project.github ? `<a href="${project.github}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #333; color: #fff; text-decoration: none; border-radius: 5px;">GitHub Repo</a>` : ''}
+                    ${project.deployment ? `<a href="${project.deployment}" target="_blank" style="display: inline-block; padding: 10px 15px; background-color: #17a2b8; color: #fff; text-decoration: none; border-radius: 5px;">Live Deployment</a>` : ''}
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    })
+    .catch(error => console.error('Error loading projects:', error));
+
         </script>
     </div>
 
@@ -78,9 +86,19 @@
             <li>&copy; 2023 Vinay Pepakayala. All rights reserved.</li>
         </ul>
         <ul class="nav-links">
-            <li><a href="https://github.com/vinaypepakayala" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
-            <li><a href="https://linkedin.com/in/vinaypepakayala" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
-            <li><a href="https://instagram.com/vinaypepakayala" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
+            <script>
+                fetch('assests/socials.json')
+                    .then(response => response.json())
+                    .then(socials => {
+                        const footerLinks = document.querySelector('.footer .nav-links:last-child');
+                        footerLinks.innerHTML = `
+                            <li><a href="${socials.github}" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
+                            <li><a href="${socials.linkedin}" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
+                            <li><a href="${socials.instagram}" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
+                        `;
+                    })
+                    .catch(error => console.error('Error loading social links:', error));
+            </script>
         </ul>
     </footer>
 </body>

@@ -46,9 +46,19 @@
             <li>&copy; 2023 Vinay Pepakayala. All rights reserved.</li>
         </ul>
         <ul class="nav-links">
-            <li><a href="https://github.com/vinaypepakayala" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
-            <li><a href="https://linkedin.com/in/vinaypepakayala" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
-            <li><a href="https://instagram.com/vinaypepakayala" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
+            <script>
+                fetch('assests/socials.json')
+                    .then(response => response.json())
+                    .then(socials => {
+                        const footerLinks = document.querySelector('.footer .nav-links:last-child');
+                        footerLinks.innerHTML = `
+                            <li><a href="${socials.github}" target="_blank"><i class="bi bi-github footer-icon"></i></a></li>
+                            <li><a href="${socials.linkedin}" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a></li>
+                            <li><a href="${socials.instagram}" target="_blank"><i class="bi bi-instagram footer-icon"></i></a></li>
+                        `;
+                    })
+                    .catch(error => console.error('Error loading social links:', error));
+            </script>
         </ul>
     </footer>
 </body>

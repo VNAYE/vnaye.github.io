@@ -1,73 +1,62 @@
 [
   {
-    "title": "Project Alpha",
-    "description": "This is the first project focusing on AI development.",
-    "link": "https://example.com/project-alpha",
-    "blog": "https://example.com/project-alpha-blog",
-    "github": "https://github.com/vinaypepakayala/project-alpha",
-    "deployment": "https://alpha.example.com"
+    "title": "Face Recognition System",
+    "description": "System that uses facial recognition to mark attendance.",
+    "github": "https://github.com/vinay-852/Face_Recognition"
   },
   {
-    "title": "Project Beta",
-    "description": "This project is about building scalable web applications.",
-    "link": "https://example.com/project-beta",
-    "github": "https://github.com/vinaypepakayala/project-beta"
+    "title": "Gaming vs Gambling",
+    "description": "Application which classifies apps as either gaming or gambling based on their description, permissions, and user reviews from the Google Play Store",
+    "github": "https://github.com/vinay-852/GamingVsGambling",
+    "deployment": "https://gamingvsgambling-1.onrender.com/"
+  },
+  
+  {
+    "title": "MediTracker",
+    "description": "MediTracker is a web app that helps users manage medication schedules and log intake with an intuitive interface.",
+    "github": "https://github.com/vinay-852/MediTracker-FrontEnd",
+    "deployment": "https://meditracker-feaj.onrender.com/"
   },
   {
-    "title": "Project Gamma",
-    "description": "A research project on blockchain technology.",
-    "link": "https://example.com/project-gamma",
-    "deployment": "https://gamma.example.com"
+    "title": "Dehazing of images",
+    "description": "Developed a model using ResNet to remove atmospheric haze from images by learning residual features.",
+    "github": "https://github.com/vinay-852/Dehazing"
   },
   {
-    "title": "Project Delta",
-    "description": "An IoT project for smart home automation.",
-    "link": "https://example.com/project-delta"
+    "title": "Translator",
+    "description": "Implements a Transformer model for translating text from English to Italian",
+    "github": "https://github.com/vinay-852/Translator_Using_Transformer_Architecture"
   },
   {
-    "title": "Project Epsilon",
-    "description": "A mobile app for personal finance management.",
-    "link": "https://example.com/project-epsilon",
-    "blog": "https://example.com/project-epsilon-blog"
+    "title": "Video Synopsis",
+    "description": "Brief summary that captures the key themes, events, and tone of a video, offering viewers a quick overview of its content.",
+    "github": "https://github.com/vinay-852/Video_Synopsis"
   },
   {
-    "title": "Project Zeta",
-    "description": "A cloud-based solution for data analytics.",
-    "link": "https://example.com/project-zeta"
+    "title": "Steering Angle Prediction",
+    "description": "The steering angle prediction uses ResNet-18, It consisting of an Encoder, Spatial Pyramid Pooling, and a Decoder.",
+    "github": "https://github.com/vinay-852/Steering_Angle_Prediction"
   },
   {
-    "title": "Project Eta",
-    "description": "A machine learning project for image recognition.",
-    "link": "https://example.com/project-eta"
+    "title": "Tokenizer",
+    "description": "This step is essential for transforming human-readable text into machine-readable numerical data, enabling Large Language Models (LLMs) to process and understand language effectively.",
+    "github": "https://github.com/vinay-852/tokenizer"
   },
   {
-    "title": "Project Theta",
-    "description": "A cybersecurity project focusing on threat detection.",
-    "link": "https://example.com/project-theta"
+    "title": "AI agent for sheets",
+    "description": "Gathering data from the net involves collecting information from websites",
+    "github": "https://github.com/vinay-852/AI-Agent-for-Sheets",
+    "deployment": "https://vinay-pepakayala-sheets-agent.hf.space"
   },
   {
-    "title": "Project Iota",
-    "description": "A healthcare project for patient data management.",
-    "link": "https://example.com/project-iota"
+    "title": "PhotoJournel",
+    "description": "Manage their photos and create a journal of their memories.",
+    "github": "https://github.com/vinay-852/Photo_Journel_Assistant",
+    "deployment": "https://vinay-pepakayala-ai-photo-journel-assistant.hf.space"
   },
   {
-    "title": "Project Kappa",
-    "description": "A gaming project using augmented reality.",
-    "link": "https://example.com/project-kappa"
-  },
-  {
-    "title": "Project Lambda",
-    "description": "A project for automating supply chain logistics.",
-    "link": "https://example.com/project-lambda"
-  },
-  {
-    "title": "Project Mu",
-    "description": "A social media platform for niche communities.",
-    "link": "https://example.com/project-mu"
-  },
-  {
-    "title": "Project Nu",
-    "description": "A renewable energy project for solar panel optimization.",
-    "link": "https://example.com/project-nu"
+    "title": "Basic Banking System",
+    "description": "It provides functionalities for banking operations such as transfers.",
+    "github": "https://github.com/vinay-852/Basic_banking_system"
   }
 ]
