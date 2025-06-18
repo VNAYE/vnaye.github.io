@@ -1,0 +1,131 @@
+<!--
+  Face Recognition Attendance System - Project Blog
+  Author: Vinay Pepakayala
+  Date: June 18, 2025
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Management System Using Face Recognition</title>
+  <link rel="stylesheet" href="../../assests/css/style.css">
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9f9f9; color: #222; margin: 0; padding: 0; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px #0001; padding: 2rem; }
+    h1, h2, h3 { color: #2a4d69; }
+    img { max-width: 100%; border-radius: 8px; margin: 1rem 0; }
+    code, pre { background: #f4f4f4; border-radius: 4px; padding: 2px 6px; }
+    table { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+    th, td { border: 1px solid #ddd; padding: 8px; }
+    th { background: #e9ecef; }
+    .faq { background: #f1f7fa; border-left: 4px solid #2a4d69; padding: 1rem; margin: 1rem 0; }
+    .summary { background: #e6f7e6; border-left: 4px solid #4caf50; padding: 1rem; margin: 1rem 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Attendance Management System Using Face Recognition</h1>
+    <p><em>Automate your attendance management with face recognition and make your workflow smarter!</em></p>
+    <img src="assets/dashboard.png" alt="Attendance Dashboard">
+
+    <h2>Introduction</h2>
+    <p>Manual attendance tracking is time-consuming and prone to errors. This project solves that by using facial recognition to automate the process. Built with Python, OpenCV, and Streamlit, it provides a user-friendly web app for students and administrators.</p>
+
+    <h2>What is Face Recognition?</h2>
+    <p>Face recognition is a computer vision technique that identifies or verifies a person from a digital image or video frame. It works by detecting faces, extracting features, and comparing them to known faces in a database. Here, OpenCV's face recognition is used to identify students and mark their attendance.</p>
+
+    <h2>Key Features</h2>
+    <ul>
+      <li><b>Student Registration:</b> Enter name and roll number, capture images via webcam for accurate recognition.</li>
+      <li><b>Model Training:</b> Processes images and trains a face recognition model to distinguish students.</li>
+      <li><b>Real-Time Attendance:</b> Scans faces in real time and marks attendance automatically.</li>
+      <li><b>Database Viewing:</b> View/manage student and attendance records through the app interface.</li>
+    </ul>
+
+    <h2>How Does It Work?</h2>
+    <ol>
+      <li><b>Registering a Student:</b> Launch the app with <code>streamlit run app.py</code>, select "Register Student," enter details, and capture images.</li>
+      <li><b>Training the Model:</b> The system processes images, detects faces, extracts features, and updates the recognition model.</li>
+      <li><b>Marking Attendance:</b> Select "Attendance," start webcam, and the system marks attendance for recognized faces.</li>
+      <li><b>Viewing Databases:</b> View all registered students and attendance records in the app.</li>
+    </ol>
+    <img src="assets/Register.png" alt="Register Student">
+    <img src="assets/attend.png" alt="Mark Attendance">
+
+    <h2>File Structure</h2>
+    <ul>
+      <li><b>app.py</b>: Main Streamlit app (UI and logic)</li>
+      <li><b>takeimages.py</b>: Capture student images</li>
+      <li><b>train.py</b>: Train the face recognition model</li>
+      <li><b>test.py</b>: Run recognition and mark attendance</li>
+      <li><b>requirements.txt</b>: Python dependencies</li>
+      <li><b>students.csv</b>: Student info</li>
+      <li><b>attendance.csv</b>: Attendance records</li>
+      <li><b>TrainingImage/</b>: Captured images</li>
+      <li><b>TrainingImageLabel/</b>: Trained model and labels</li>
+    </ul>
+
+    <h2>How to Set Up and Use</h2>
+    <ol>
+      <li>Install dependencies: <code>pip install -r requirements.txt</code></li>
+      <li>Run the app: <code>streamlit run app.py</code></li>
+      <li>Register students and capture images</li>
+      <li>Model trains automatically after registration</li>
+      <li>Start attendance and mark presence via webcam</li>
+      <li>View all records in the app</li>
+    </ol>
+
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <b>What if the system doesn't recognize a student?</b><br>
+      Ensure clear images during registration. Try again with better lighting and angles.<br><br>
+      <b>Can I add more students later?</b><br>
+      Yes, register new students anytime. The model updates automatically.<br><br>
+      <b>Is my data safe?</b><br>
+      All data is stored locally in CSV files. No uploads online.<br><br>
+      <b>What if I don't have a webcam?</b><br>
+      A webcam is required for capturing and recognizing faces.
+    </div>
+
+    <h2>How Face Recognition Works (Technical Overview)</h2>
+    <ol>
+      <li><b>Face Detection:</b> Uses Haar Cascade classifier (OpenCV) to find faces.</li>
+      <li><b>Feature Extraction:</b> Extracts unique facial features.</li>
+      <li><b>Model Training:</b> Trains an LBPH recognizer on features.</li>
+      <li><b>Recognition:</b> Compares new faces to database and finds matches.</li>
+    </ol>
+
+    <h2>Machine Learning Models Used</h2>
+    <h3>1. Haar Cascade Classifier (Face Detection)</h3>
+    <ul>
+      <li><b>What is it?</b> Machine learning-based object detection, pre-trained on face/non-face images.</li>
+      <li><b>Why use it?</b> Fast, lightweight, real-time, easy to use.</li>
+      <li><b>What does it do?</b> Detects faces in frames for recognition.</li>
+    </ul>
+    <h3>2. LBPH Face Recognizer (Face Recognition)</h3>
+    <ul>
+      <li><b>What is it?</b> Local Binary Patterns Histograms algorithm for face recognition.</li>
+      <li><b>Why use it?</b> Robust to lighting/expressions, works with small datasets, fast.</li>
+      <li><b>What does it do?</b> Converts faces to histograms and matches them for recognition.</li>
+    </ul>
+    <p><b>Why not deep learning?</b> Deep models need large datasets and GPUs. For small, real-time projects, classical models are more practical.</p>
+
+    <h2>Summary Table</h2>
+    <table>
+      <tr><th>Model</th><th>Purpose</th><th>Why Chosen?</th></tr>
+      <tr><td>Haar Cascade</td><td>Face Detection</td><td>Fast, lightweight, real-time, easy to use</td></tr>
+      <tr><td>LBPH Face Recognizer</td><td>Face Recognition</td><td>Robust, simple, works with small datasets</td></tr>
+    </table>
+
+    <h2>Acknowledgements</h2>
+    <ul>
+      <li><a href="https://opencv.org/">OpenCV</a> for image processing and facial recognition</li>
+      <li><a href="https://streamlit.io/">Streamlit</a> for the web interface</li>
+    </ul>
+    <div class="summary">
+      <b>Automate your attendance management with face recognition and make your workflow smarter!</b>
+    </div>
+  </div>
+</body>
+</html>
