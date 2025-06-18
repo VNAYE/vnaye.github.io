@@ -5,6 +5,10 @@
     "github": "https://github.com/vinay-852/Face_Recognition"
   },
   {
+    "title": "Image Captioning",
+    "description": "This project implements an Image Captioning system that generates natural language descriptions for images, leveraging a Vision Transformer (ViT) as the encoder and GPT-2 as the decoder.",
+    "github": "https://github.com/vinay-852/Image_Captioning"
+  },{
     "title": "Gaming vs Gambling",
     "description": "Application which classifies apps as either gaming or gambling based on their description, permissions, and user reviews from the Google Play Store",
     "github": "https://github.com/vinay-852/GamingVsGambling",
